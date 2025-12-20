@@ -15,7 +15,7 @@ export default defineConfig({
       manifest: {
         name: 'ONECO',
         short_name: 'ONECO',
-        description: 'ONECO - Your Eco-Friendly Companion',
+        description: 'ONECO - 똑똑해지는 경제 습관',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
