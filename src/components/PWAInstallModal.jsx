@@ -44,31 +44,43 @@ const PWAInstallModal = ({
 
         {/* 안내 텍스트 */}
         <p className='text-center text-[18px] text-[#000000] font-medium leading-[150%] mb-4'>
-          홈 화면에 원코 앱을 추가하고
+          홈 화면에 원코 앱을 추가해서
           <br />
-          원코를 더 빠르게 편하게 이용해보세요.
+          원코를 더 빠르고 편하게 이용해보세요.
         </p>
 
         {/* iOS 안내 메시지 (조건부) */}
         {isIOS && (
-          <div className='bg-blue-50 rounded-lg p-4 mb-4'>
-            <p className='text-sm text-[#000000] leading-[150%]'>
-              Safari에서 <span className='font-semibold'>공유 버튼</span>을 누른
-              후
-              <br />
+          <div className='bg-blue-50 rounded-lg p-4 mb-4 flex flex-col justify-center items-center'>
+            <div>
+              <span className='font-semibold inline-flex items-center'>
+                공유 버튼 (
+                <img
+                  src='/images/AppleShareIcon.png'
+                  alt='share icon'
+                  width={16}
+                  height={20}
+                />
+                )
+              </span>
+              을 누른 후
+            </div>
+            <div>
               <span className='font-semibold'>"홈 화면에 추가"</span>를
               선택해주세요.
-            </p>
+            </div>
           </div>
         )}
 
         {/* 설치 버튼 */}
-        <button
-          onClick={onInstall}
-          className='w-full py-2 bg-[#6FAEFF] text-white rounded-2xl font-normal text-[16px] hover:bg-[#5188FB] transition-colors mb-4'
-        >
-          간편하게 원코 앱 추가하기
-        </button>
+        {!isIOS && (
+          <button
+            onClick={onInstall}
+            className='w-full py-2 bg-[#6FAEFF] text-white rounded-2xl font-normal text-[16px] hover:bg-[#5188FB] transition-colors mb-4'
+          >
+            간편하게 원코 앱 추가하기
+          </button>
+        )}
 
         {/* 오늘은 그만 보기 링크 */}
         <button
