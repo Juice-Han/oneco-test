@@ -30,7 +30,11 @@ export const usePWAInstall = () => {
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault()
       setDeferredPrompt(e)
-      setShowModal(true)
+
+      // 조건 확인 후 모달 표시
+      if (shouldShowPWAModal()) {
+        setShowModal(true)
+      }
     }
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
